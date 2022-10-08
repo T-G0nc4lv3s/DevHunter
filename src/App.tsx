@@ -1,11 +1,11 @@
 import './assets/styles/custom.scss';
-import Home from './pages/Home';
+import Search from './pages/Search';
 
 import './App.css';
 
 function App() {
   return (
-    <Home />
+    <Search />
   );
 }
 
