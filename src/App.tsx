@@ -1,9 +1,11 @@
 import './assets/styles/custom.scss';
+import Navbar from 'components/Navbar';
+
 import './App.css';
 
 function App() {
   return (
-    <h1>Github API</h1>
+    <Navbar />
   );
 }
 
