@@ -6,3 +6,16 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+@media(min-width: 576px){
+  .navbar-container{
+    font-size: 22px;
+  }
+}
+
+@media(min-width: 768px){
+  .navbar-container{
+    font-size: 24px;
+    padding-left: 40px;
+  }
+}
