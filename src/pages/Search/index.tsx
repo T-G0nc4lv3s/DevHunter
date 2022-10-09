@@ -1,6 +1,7 @@
 import './styles.css';
 import Navbar from 'components/Navbar';
 import SearchCard from 'components/SearchCard';
+import ProfileCard from 'components/ProfileCard';
 
 const Search = () => {
   return (
@@ -11,7 +12,7 @@ const Search = () => {
           <SearchCard />
         </div>
         <div className="bottom-container">
-          <SearchCard />
+          <ProfileCard />
         </div>
       </div>
     </>
