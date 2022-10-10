@@ -1,22 +1,18 @@
 import './styles.css';
-import Navbar from 'components/Navbar';
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-      <div className="home-container">
-        <div className="header-container">
-          <h1>Desafio Github API</h1>
-        </div>
-        <div className="content-container">
-          <p>Bootcamp Spring React - DevSuperior</p>
-        </div>
-        <div className="btn-container">
-          <button className="btn btn-primary">Começar</button>
-        </div>
-      </div>
-    </>
+    <div className="home-container">
+      <span className="header-content">
+        <h1>Desafio Github API</h1>
+      </span>
+      <span className="body-content">
+        <h3>Bootcamp Spring React - DevSuperior</h3>
+      </span>
+      <button className="btn btn-primary btn-search">
+        Encontrar
+      </button>
+    </div>
   );
 };
 
