@@ -1,11 +1,11 @@
 import './assets/styles/custom.scss';
-import Search from './pages/Search';
+import Routes from './Routes';
 
 import './App.css';
 
 function App() {
   return (
-    <Search />
+    <Routes />
   );
 }
 
