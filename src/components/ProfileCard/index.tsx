@@ -1,23 +1,34 @@
 import './styles.css';
-import AvatarImg from 'assets/images/avatar.svg';
+import {Profile} from 'types/profile';
 
-const ProfileCard = () => {
+type Props = {
+  profile: Profile,
+};
 
-    return (
-        <div className="profile-card-container">
-            <div className="content-container">
-                <div className="image-container">
-                  <img src={AvatarImg} alt="Profile" /> 
-                </div>
-                <div className="info-container">
-                   <span>Perfil: https://api.github.com/users/acenelio</span>
-                   <span>Seguidores: 4379</span>
-                   <span>Localidade: Uberlândia</span>
-                   <span>Nome: Nelio Alves</span>
-                </div>
-            </div>
+const ProfileCard = ({ profile }: Props) => {
+  return (
+    <div className="profile-card-container">
+      <div className="content-container">
+        <div className="image-container">
+          <img src={profile.avatar_url} alt="Profile" />
         </div>
-    );
-}
+        <div className="info-container">
+          <span>
+            <strong>Perfil: </strong> {profile.url}
+          </span>
+          <span>
+            <strong>Seguidores: </strong> {profile.followers}
+          </span>
+          <span>
+            <strong>Localidade: </strong> {profile.location}
+          </span>
+          <span>
+            <strong>Nome: </strong> {profile.name}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ProfileCard;
