@@ -1,9 +1,10 @@
 import './styles.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 import { REQUEST_URL } from 'util/requests';
 import ProfileCard from 'components/ProfileCard';
+import SearchLoader from './SearchLoader';
 
 type FormData = {
   profile: string;
@@ -18,6 +19,7 @@ type ProfileData = {
 };
 
 const SearchCard = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
   const [profileData, setProfileData] = useState<ProfileData>();
 
@@ -34,12 +36,18 @@ const SearchCard = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    axios.get(`${REQUEST_URL}${formData.profile}`).then((response) => {
-      setProfileData(response.data);
-    })
-    .catch((error) => {
-      setProfileData(undefined);
-    });
+    setIsLoading(true);
+    axios
+      .get(`${REQUEST_URL}${formData.profile}`)
+      .then((response) => {
+        setProfileData(response.data);
+      })
+      .catch((error) => {
+        setProfileData(undefined);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -64,10 +72,16 @@ const SearchCard = () => {
           </div>
         </form>
       </div>
-      {profileData && (
-        <div className="profile-container">
-          <ProfileCard profile={profileData} />
+      {isLoading ? (
+        <div className="card-loader-container">
+          <SearchLoader />
         </div>
+      ) : (
+        profileData && (
+          <div className="profile-container">
+            <ProfileCard profile={profileData} />
+          </div>
+        )
       )}
     </>
   );

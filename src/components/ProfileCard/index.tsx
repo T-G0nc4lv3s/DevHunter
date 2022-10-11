@@ -13,6 +13,9 @@ const ProfileCard = ({ profile }: Props) => {
           <img src={profile.avatar_url} alt="Profile" />
         </div>
         <div className="info-container">
+          <span className="title">
+            Informações
+          </span>
           <span>
             <strong>Perfil: </strong> {profile.url}
           </span>

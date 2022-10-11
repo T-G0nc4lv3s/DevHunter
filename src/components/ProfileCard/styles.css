@@ -37,8 +37,21 @@
   background-color: #fff;
   border-radius: 6px;
   width: 100%;
+  min-height: 26vh;
   font-size: 11px;
-  padding: 5px 5px;
+  padding: 5px 3px;
+}
+
+.info-container .title {
+  border: unset;
+  color: #1890FF;
+  font-weight: 700;
+  font-size: 1.3em;
+  text-align: start;
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 0;
+  line-height: 28px
 }
 
 .info-container span {
@@ -94,8 +107,9 @@
     min-height: 212px;
   }
   .info-container {
-    font-size: 18px;
+    font-size: 16px;
     max-height: 212px;
+    padding: 10px 10px 20px 10px;
   }
 }
 
@@ -105,5 +119,6 @@
   }
   .info-container {
     font-size: 20px;
+    padding: 20px;padding: 20px 20px 30px 20px;
   }
 }
